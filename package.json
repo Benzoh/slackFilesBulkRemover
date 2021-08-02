@@ -1,0 +1,11 @@
+{
+  "name": "slack-file-remover",
+  "version": "1.0.0",
+  "main": "app/remover.js",
+  "author": "@hippohack",
+  "license": "MIT",
+  "dependencies": {
+    "@slack/web-api": "^6.3.0",
+    "dotenv": "^10.0.0"
+  }
+}
