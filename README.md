@@ -19,4 +19,5 @@ $ node app/remover.js
 ## 自分向け
 
 - IPアドレスで制限してるので使用時には随時チェックすべし。
+    - https://api.slack.com/apps/A02A6AF4LJD/oauth?
 - 

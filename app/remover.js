@@ -8,7 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
 const { WebClient } = require('@slack/web-api');
 const token  = process.env.SLACK_TOKEN;
 const client = new WebClient(token);
-const timestamp_to = Math.round(new Date('2021-02-28').getTime()/1000)
+const timestamp_to = Math.round(new Date(process.env.TIMESTAMP_TO).getTime()/1000)
 
 const getFiles = async () => {
   const params = {
@@ -25,12 +25,12 @@ const deleteFiles = async (file) => {
     file: file.id,
   }
   const response = await client.files.delete(params);
-  console.log({response});
+  console.log('deleted files...', {response});
 }
 
 const main = async () => {
   const response = await getFiles()
-  console.log({response});
+  console.log('file list...', {response});
 
   response.files.forEach(file => {
     deleteFiles(file)
